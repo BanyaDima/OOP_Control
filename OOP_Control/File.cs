@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOP_Control
 {
-    class File
+     public class File
     {
         public string Name { get; protected set; }
         public string Extencion { get; protected set; }
@@ -16,13 +16,16 @@ namespace OOP_Control
         {
             string[] strInput = str.Split(new char[] { '(', ')',}, StringSplitOptions.RemoveEmptyEntries);
             Name = strInput[0];
-            Extencion = strInput[0];
             Size = strInput[1];
+            string[] ext = str.Split('.', '(');
+            Extencion = ext[1];            
         }
-        public override string ToString()
+        public virtual void Print()
         {
-
-            return ($"{Name}({Size})"); 
+            Console.WriteLine($"{ Name}");
+            Console.WriteLine($"\tExtencion: {Extencion}");
+            Console.WriteLine($"\tSize: {Size}");
         }
+       
     }
 }

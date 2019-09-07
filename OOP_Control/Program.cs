@@ -11,7 +11,7 @@ namespace OOP_Control
     {
         static void Main(string[] args)
         {
-           
+
 
             string text = @"Text:file.txt(6B);Some string content
 Image:img.bmp(19MB);1920х1080
@@ -26,7 +26,7 @@ Movie:logan.2017.mkv(19GB);1920х1080;2h12m";
             {
                 string[] split = files[i].Split(':');
                 string fileType = split[0].ToLower();
-                switch(fileType)
+                switch (fileType)
                 {
                     case "text":
                         Text textFile = new Text();
@@ -47,6 +47,12 @@ Movie:logan.2017.mkv(19GB);1920х1080;2h12m";
                         break;
                 }
             }
+
+            for (int i = 0; i < result.Count; i++)
+            {
+                ((File)result[i]).Print();
+            }
+
         }
 
     }

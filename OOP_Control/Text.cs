@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace OOP_Control
 {
-    class Text : File
+    public class Text : File
     {
         public string Content { get; private set; }
-
+        
         public override void Parse(string str)
         {
             base.Parse(str);
@@ -19,6 +19,11 @@ namespace OOP_Control
         public override string ToString()
         {
             return ($"{Name}({Size});{Content}");
+        }
+        public override void Print()
+        {
+            base.Print();
+            Console.WriteLine($"\tContent: {Content}");
         }
 
     }

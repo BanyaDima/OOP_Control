@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace OOP_Control
 {
-    class Images : File
+     public class Images : File
     {
         public string Resolution { get; protected set; }
+        
 
         public override void Parse(string str)
         {
@@ -20,6 +21,11 @@ namespace OOP_Control
         public override string ToString()
         {
             return ($"{Name}({Size});{Resolution}");
+        }
+        public override void Print()
+        {
+            base.Print();
+            Console.WriteLine($"\tResolution: {Resolution}");
         }
 
     }
